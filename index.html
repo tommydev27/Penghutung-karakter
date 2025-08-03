@@ -4,101 +4,116 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Penghitung Karakter</title>
-<style>
-  body {
-    font-family: normal;
-    margin: 0;
-    padding: 0;
-  }
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 20px;
-    border-bottom: 1px solid #0ab7b2;
-  }
-  header .left, header .right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-header .center {
-  font-weight: bold;
-  font-size: 18px;
-  color: #0ab7b2;
-  text-align: left;
-  margin: 0;
-}
+  <style>
+    body {
+      font-family: normal;
+      padding: 0px;
+      border: 1px solid #0ab7b2;
+      border-radius: 5px;
+      height: 680px;
+    }
 
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  main {
-    padding: 20px 0;
-  }
-.stats-top {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 5px;
-  text-align: center;
-  font-size: 12px;
-  margin-bottom: 10px;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+      border-bottom: 1px solid #0ab7b2;
+    }
 
-}
+    header .center {
+      font-weight: bold;
+      font-size: 18px;
+      color: #0ab7b2;
+      text-align: left;
+      margin: 0;
+    }
 
-.stat-box {
-  width: 70px;
-  height: 70px;
-  border: 1px solid #0ab7b2;
-  background: #33043c;
-  color: #fff;
-  padding: 5px;
-  font-size: 12px;
-  border-radius: 50%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-}
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
+    main {
+      padding: 20px 0;
+    }
 
-.stat-number {
-  margin-top: -10px;
-}
+    .stats-top {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 5px;
+      text-align: center;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
 
-textarea {
-  width: 100%;
-  height: 250px;
-  margin: 10px 0;
-  padding: 10px;
-  font-size: 16px;
-  box-sizing: border-box;
-  border-radius: 4px;
-  resize: none;
-    border: 1px solid #0ab7b2;
-}
+    .stat-box {
+      width: 70px;
+      height: 70px;
+      border: 1px solid #0ab7b2;
+      background: #33043c;
+      color: #fff;
+      padding: 5px;
+      font-size: 12px;
+      border-radius: 50%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: auto;
+    }
 
-  }
-  .stats-bottom {
-   width: 100%;
-  }
-  .box {
-    border: 1px solid #0ab7b2;
-    padding: 5px;
-    text-align: center;
-    border-radius: 4px;
-  background: #33043c;
-  color: #fff;
-  }
-  .box p:first-child {
-    font-weight: bold;
-  }
-</style>
+    .stat-number {
+      margin-top: -10px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 250px;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      box-sizing: border-box;
+      border-radius: 4px;
+      resize: none;
+      border: 1px solid #0ab7b2;
+    }
+
+    .stats-bottom .box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 0px;
+    }
+
+    .stats-bottom .row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .stats-bottom .item {
+      flex: 1;
+      text-align: center;
+      background: #33043c;
+      color: #fff;
+      border-radius: 10px;
+      padding: 0px;
+    }
+
+    .stats-bottom .item p:first-child {
+      font-weight: bold;
+      margin-bottom: 4px;
+    }
+
+    .stats-bottom .item p:last-child {
+      font-size: 1.2em;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
 
@@ -108,81 +123,112 @@ textarea {
 
   <main>
     <div class="container">
-<div class="stats-top">
-  <div class="stat-box">
-    <p>Kata</p>
-    <p class="stat-number"><strong id="word">0</strong></p>
-  </div>
-  <div class="stat-box">
-    <p>Karakter</p>
-    <p class="stat-number"><strong id="char">0</strong></p>
-  </div>
-  <div class="stat-box">
-    <p>Paragraf</p>
-    <p class="stat-number"><strong id="para">0</strong></p>
-  </div>
-  <div class="stat-box">
-    <p>Kalimat</p>
-    <p class="stat-number"><strong id="sent">0</strong></p>
-  </div>
-</div>
+      <div class="stats-top">
+        <div class="stat-box">
+          <p>Kata</p>
+          <p class="stat-number"><strong id="word">0</strong></p>
+        </div>
+        <div class="stat-box">
+          <p>Karakter</p>
+          <p class="stat-number"><strong id="char">0</strong></p>
+        </div>
+        <div class="stat-box">
+          <p>Paragraf</p>
+          <p class="stat-number"><strong id="para">0</strong></p>
+        </div>
+        <div class="stat-box">
+          <p>Kalimat</p>
+          <p class="stat-number"><strong id="sent">0</strong></p>
+        </div>
+      </div>
 
-<div style="position: relative;">
-  <textarea id="input" placeholder="Ketik atau salin dan tempel teks Anda di sini." style="padding-bottom: 40px;"></textarea>
-  <button onclick="clearText()" style="position: absolute; bottom: 20px; right: 8px; padding: 6px 15px; background-color: #0ab7b2; color: white; border: none; border-radius: 4px; cursor: pointer;">Clear</button>
-</div>
-
+      <div style="position: relative;">
+        <textarea id="input" placeholder="Ketik atau salin dan tempel teks Anda di sini." style="padding-bottom: 40px;"></textarea>
+        <button onclick="clearText()" style="position: absolute; bottom: 20px; right: 8px; padding: 6px 15px; background-color: #0ab7b2; color: white; border: none; border-radius: 4px; cursor: pointer;">Clear</button>
+      </div>
 
       <div class="stats-bottom">
         <div class="box">
-          <p>Karakter Tanpa Spasi</p>
-          <p id="charNoSpace">0</p>
-          <hr>
-          <p>Kata Unik</p>
-          <p id="unique">0</p>
+          <div class="row">
+            <div class="item">
+              <p>Karakter Tanpa Spasi</p>
+              <p id="charNoSpace">0</p>
+            </div>
+            <div class="item">
+              <p>Kata Unik</p>
+              <p id="unique">0</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="item">
+              <p>Perkiraan Waktu Baca</p>
+              <p id="read">0 mnt</p>
+            </div>
+            <div class="item">
+              <p>Perkiraan Waktu Bicara</p>
+              <p id="speak">0 mnt</p>
+            </div>
+          </div>
         </div>
-
+      </div>
     </div>
   </main>
+
 <script>
+  const input = document.getElementById("input");
+  const char = document.getElementById("char");
+  const word = document.getElementById("word");
+  const para = document.getElementById("para");
+  const sent = document.getElementById("sent");
+  const charNoSpace = document.getElementById("charNoSpace");
+  const unique = document.getElementById("unique");
+  const read = document.getElementById("read");
+  const speak = document.getElementById("speak");
+
+  function countGraphemes(text) {
+    return Array.from(text).length;
+  }
+
+  function updateStats() {
+    const text = input.value;
+
+    // Karakter total (termasuk spasi dan emoji dihitung 1)
+    char.textContent = countGraphemes(text);
+
+    // Karakter tanpa spasi
+    charNoSpace.textContent = countGraphemes(text.replace(/\s/g, ''));
+
+    // Kata
+    const words = text.trim().match(/\b\w+\b/g) || [];
+    word.textContent = words.length;
+
+    // Paragraf
+    const paras = text.split(/\n+/).filter(p => p.trim() !== '');
+    para.textContent = paras.length;
+
+    // Kalimat
+    const sentences = text.split(/[.!?]+/).filter(s => s.trim() !== '');
+    sent.textContent = sentences.length;
+
+    // Kata unik
+    const uniqueWords = [...new Set(words.map(w => w.toLowerCase()))];
+    unique.textContent = uniqueWords.length;
+
+    // Perkiraan waktu baca & bicara
+    read.textContent = Math.ceil(words.length / 200) + " mnt";
+    speak.textContent = Math.ceil(words.length / 130) + " mnt";
+  }
+
+  input.addEventListener("input", updateStats);
+  input.addEventListener("paste", () => {
+    setTimeout(updateStats, 0);
+  });
+
   function clearText() {
     input.value = "";
-    input.dispatchEvent(new Event("input"));
+    updateStats();
   }
 </script>
-
-  <script>
-    const input = document.getElementById("input");
-    const char = document.getElementById("char");
-    const word = document.getElementById("word");
-    const para = document.getElementById("para");
-    const sent = document.getElementById("sent");
-    const charNoSpace = document.getElementById("charNoSpace");
-    const unique = document.getElementById("unique");
-    const read = document.getElementById("read");
-    const speak = document.getElementById("speak");
-
-    input.addEventListener("input", () => {
-      const text = input.value;
-      char.textContent = text.length;
-      charNoSpace.textContent = text.replace(/\s/g, '').length;
-
-      const words = text.trim().match(/\b\w+\b/g) || [];
-      word.textContent = words.length;
-
-      const paras = text.split(/\n+/).filter(p => p.trim() !== '');
-      para.textContent = paras.length;
-
-      const sentences = text.split(/[.!?]+/).filter(s => s.trim() !== '');
-      sent.textContent = sentences.length;
-
-      const uniqueWords = [...new Set(words.map(w => w.toLowerCase()))];
-      unique.textContent = uniqueWords.length;
-
-      read.textContent = Math.ceil(words.length / 200) + " mnt";
-      speak.textContent = Math.ceil(words.length / 130) + " mnt";
-    });
-  </script>
 
 </body>
 </html>
